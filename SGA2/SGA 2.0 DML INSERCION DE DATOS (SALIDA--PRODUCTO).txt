@@ -1,0 +1,24 @@
+insert into 
+salida(
+nombre_producto,medida_producto,fecha,cantidad,observaciones_salida,tipo_id,num_id,nombre_cliente,
+telefono_cliente,direccion_cliente,correo_cliente)
+values
+(
+'PRODUCTO', -- 'botas negras','botas azules','botas marrones' COLOCAR LO MISMO EN EL UPDATE DE PRODUCTO--
+'MEDIDA', -- '30','32','34','36','38','40','42' ENCERRADOS EN LAS COMILLAS --
+'FECHA', -- 2023-09-15 00:00:00	--
+CANTIDAD_SALIDA, -- NUMERO ENTERO. COLOCAR LO MISMO EN EL UPDATE DE PRODUCTO -- Y MUY IMPORTANTE. QUE NO SEA MAYOR A LA CANTIDAD REGISTRADA EN LA TABLA PRODUCTO PORQUE DA VALORES NEGATIVOS --
+'OBSERVACIONES', -- COLOQUEN LO QUE SE LES DE LA GANA PERO QUE SEA DIFERENTE --
+'TIPO ID', -- 'CC','CE','PASAPORTE','NIT','DE' PUEDEN PONER VALORES NULOS PERO DEBEN BORRARLO DEL INSERT INTO --
+NUMERO_ID, -- CUALQUIER NUMERO QUE NO PASE DE 20 DIGITOS PUEDEN PONER VALORES NULOS PERO DEBEN BORRARLO DEL INSERT INTO --
+'NOMBRES', -- LO QUE QUIERAN PUEDEN PONER VALORES NULOS PERO DEBEN BORRARLO DEL INSERT INTO --
+'TELEFONO', -- LO QUE QUIERAN PUEDEN PONER VALORES NULOS PERO DEBEN BORRARLO DEL INSERT INTO--
+'DIRECCION', -- LO QUE QUIERAN PUEDEN PONER VALORES NULOS PERO DEBEN BORRARLO DEL INSERT INTO--
+'CORREO' -- LO QUE QUIERAN PUEDEN PONER VALORES NULOS PERO DEBEN BORRARLO DEL INSERT INTO --
+); 
+
+update producto 
+set cantidad =(cantidad-(CANTIDAD)) -- significa: set cantidad('de la tabla producto') = (cantidad('de la tabla producto')-(cantidad('de la tabla salida')))
+where 
+nombre_producto='PRODUCTO' and -- colocar lo mismo que en el insert into -- 
+medida_producto ='MEDIDA'; -- colocar lo mismo que en el inser into --

@@ -1,0 +1,87 @@
+.contenedorprincipal{
+    /*este es el principal y no se toca */
+        background-color: white;
+        height: 65%; 
+        width: 25%;   
+        border-radius: 20px ;
+        margin-top: 5%;    
+        margin-bottom: 1%;
+        margin-left: 37.5%;
+        margin-right: 37.5%;
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        text-align: justify;
+        overflow-y: auto;
+    }
+    .contenedor1{
+        /* tanto el tamaño como el margen respectivo variaran dependiendo la situacion y se hara en el html correspondiente*/
+            position: fixed;
+            height: 20%;
+            width: 80%;
+            border: solid black;
+            border-radius:10px ;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 1%;    
+            margin-bottom: 1%;
+            display: flex;
+            justify-content: space-between;
+            text-align: justify;
+            overflow-y: auto;
+        }
+    .contenedor2{
+    /* tanto el tamaño como el margen respectivo variaran dependiendo la situacion y se hara en el html correspondiente*/
+        position:fixed;
+        height: 40%;
+        width: 20%;
+        border: none ;
+        border-radius:10px ;
+        margin-left: 3%;
+        margin-right: 7%;
+        margin-top: 5%;    
+        margin-bottom: 5%;
+        text-align: center;
+
+    }
+    .usuario input{
+    width: 80%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 15px;
+    border: none;
+    background: none;
+    border-bottom: 2px solid #adadad;
+}
+    .usuario select{
+        width: 80%;
+        padding: 0 5px;
+        height: 40px;
+        font-size: 15px;
+        border: none;
+        background: none;
+        border-bottom: 2px solid #adadad;
+    }
+    .usuario option{
+        width: 100%;
+        padding: 0 5px;
+        height: 40px;
+        font-size: 15px;
+        border: none;
+        background: none;
+        border-bottom: 2px solid #adadad;
+    } 
+.boton{
+    color: red;
+}
+.boton input[type="submit"] {
+    background-color: #12c29c;  
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    outline: none;
+}
+.boton input[ type="submit"]:hover{
+   background-color:  #6218da; 
+}

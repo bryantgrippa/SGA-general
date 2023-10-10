@@ -1,0 +1,34 @@
+create view stock as
+select 
+p.nombre_producto as 'PRODUCTO', 
+p.medida_producto as 'MEDIDA', 
+p.nombre_proveedor as 'PROVEEDOR', 
+e.precio as 'VALOR DE LA COMPRA', 
+e.precio*0.11 as 'GANANCIAS (11%)',
+e.precio*0.19 as 'IVA(19%)', 
+e.precio+((e.precio*0.19)+(e.precio*0.11)) as 'VALOR TOTAL', 
+p.cantidad as 'STOCK TOTAL',
+e.fecha_compra as 'FECHA DE INGRESO',
+e.observaciones_entrada as 'OBSERVACIONES'
+from entrada as e
+join producto as p 
+on e.codigo_entrada=p.codigo_producto;
+
+create view venta as
+select 
+p.nombre_producto as 'PRODUCTO', 
+p.medida_producto as 'MEDIDA', 
+p.nombre_proveedor as 'PROVEEDOR', 
+s.cantidad as 'CANTIDAD', 
+s.fecha as 'FECHA DE VENTA',
+p.precio as 'VALOR TOTAL', 
+s.tipo_id as 'TIPO ID CLIENTE',
+s.num_id as 'No ID CLIENTE',
+s.nombre_cliente as 'NOMBRE',
+s.telefono_cliente as 'TELEFONO',
+s.direccion_cliente as 'DIRECCION',
+s.correo_cliente as 'CORREO',
+s.observaciones_salida as 'OBSERVACIONES'
+from salida as s
+join producto as p 
+on s.nombre_producto=p.nombre_producto and p.medida_producto=s.medida_producto;

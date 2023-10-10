@@ -1,0 +1,46 @@
+create database SGA;
+use SGA;
+CREATE TABLE producto (
+    codigo_producto INT AUTO_INCREMENT primary key,
+    nombre_producto ENUM('botas rojas', 'botas azules', 'botas marrones') not null,
+    medida_producto enum('30','32','34','36','38','40','42') not null,
+    descripcion_producto TEXT null,
+    precio DECIMAL(10 , 2 ) not null,
+    cantidad INT(255) not null
+);
+CREATE TABLE proveedores (
+    nombre_proveedor VARCHAR(50) not null,
+    nombre_producto2 ENUM('botas rojas', 'botas azules', 'botas marrones') not null,
+    medida_producto2 enum('30','32','34','36','38','40','42') not null,
+    nit int(11) not null,
+    telefono_proveedor VARCHAR(30) null,
+    direccion_proveedor VARCHAR(30) null,
+    correo_proveedor VARCHAR(50) null
+); 
+-- compra
+CREATE TABLE entrada (
+    orden_compra INT AUTO_INCREMENT primary key,
+    nombre_proveedor VARCHAR(30) not null,
+    nombre_producto3 ENUM('botas rojas', 'botas azules', 'botas marrones') not null,
+	medida_producto3 enum('30','32','34','36','38','40','42') not null,
+    precio DECIMAL(10 , 2 ) not null,
+    fecha_compra DATETIME null,
+    cantidad INT(255) not null
+);
+CREATE TABLE salida (
+    numero_factura INT AUTO_INCREMENT primary key,
+    medida_producto4 enum('30','32','34','36','38','40','42') not null,
+    nombre_producto4 ENUM('botas rojas', 'botas azules', 'botas marrones') not null,    
+    fecha DATE null,
+    cantidad INT(255) not null,
+    precio DECIMAL(10 , 2 ) not null,
+    descripcion_salida TEXT null
+);
+CREATE TABLE cliente (
+    tipo_id enum('CC','CE','PASAPORTE','NIT')not null,
+	num_id int(11)not null,    
+	nombre_cliente VARCHAR(50)null,
+    telefono_cliente VARCHAR(30) null,
+    direccion_cliente VARCHAR(30) null,
+    correo_cliente VARCHAR(50) null
+);
